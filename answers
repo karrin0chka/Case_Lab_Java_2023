@@ -1,8 +1,43 @@
 Задание 1.
-
+------------------------------------------------------------------------------------
 SELECT surname 
 FROM job 
 WHERE experience = ( SELECT MAX(experience) 
                      FROM job 
                      WHERE experience NOT IN (SELECT MAX(experience) FROM job)
                    );
+
+
+Задание 2.
+------------------------------------------------------------------------------------
+public class Main
+{
+    public static int swap(int a, int b) {
+        return a;
+    };
+    
+	public static void main(String[] args) {
+		int a = 1;
+		int b = 2;
+		a = swap(b, b = a);
+       
+        System.out.printf("a = %d b = %d", a, b);
+	}
+}
+
+
+Задание 3.2.
+------------------------------------------------------------------------------------
+public static boolean palindromeString(String str) {
+        str = str.toLowerCase().replaceAll(" ", "");
+        char[] strCharArray = str.toCharArray();
+        
+        int i = 0;
+        int strLength = str.length();
+        while(i < strLength / 2) {
+            if (strCharArray[i] != strCharArray[strLength - 1 - i])
+                return false;
+            i++;
+        }
+        return true;
+    };
