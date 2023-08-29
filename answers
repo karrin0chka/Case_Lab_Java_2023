@@ -1,0 +1,8 @@
+Задание 1.
+
+SELECT surname 
+FROM job 
+WHERE experience = ( SELECT MAX(experience) 
+                     FROM job 
+                     WHERE experience NOT IN (SELECT MAX(experience) FROM job)
+                   );
